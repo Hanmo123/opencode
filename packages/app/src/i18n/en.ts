@@ -855,6 +855,11 @@ export const dict = {
 
   "settings.general.row.language.title": "Language",
   "settings.general.row.language.description": "Change the display language for OpenCode",
+  "settings.general.row.efficientMode.title": "Efficient mode",
+  "settings.general.row.efficientMode.description": "Disables animations and smooth scrolling to reduce resource usage.",
+  "settings.general.row.efficientMode.off": "Off",
+  "settings.general.row.efficientMode.always": "Always",
+  "settings.general.row.efficientMode.unfocused": "When window is unfocused",
   "settings.general.row.shell.title": "Terminal shell",
   "settings.general.row.shell.description": "Shell used by the terminal and agent tools",
   "settings.general.row.shell.autoDefault": "Auto (Default)",

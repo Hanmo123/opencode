@@ -26,6 +26,7 @@ import { TooltipV2 } from "@opencode-ai/ui/v2/tooltip-v2"
 import type { SnapshotFileDiff, VcsFileDiff } from "@opencode-ai/sdk/v2"
 import { ConstrainDragYAxis, getDraggableId } from "@/utils/solid-dnd"
 import { useDialog } from "@opencode-ai/ui/context/dialog"
+import { useMotionDisabled } from "@opencode-ai/ui/context/motion"
 
 import FileTree from "@/components/file-tree"
 import { normalizeFileTreeV2Path } from "@/components/file-tree-v2-model"
@@ -80,6 +81,7 @@ export function SessionSidePanel(props: {
   stacked?: boolean
 }) {
   const layout = useLayout()
+  const motionDisabled = useMotionDisabled()
   const settings = useSettings()
   const file = useFile()
   const language = useLanguage()
@@ -340,7 +342,7 @@ export function SessionSidePanel(props: {
                           <div class="sticky top-0 shrink-0 flex">
                             <Tabs.List
                               ref={(el: HTMLDivElement) => {
-                                const stop = createFileTabListSync({ el, contextOpen })
+                                const stop = createFileTabListSync({ el, contextOpen, motionDisabled })
                                 onCleanup(stop)
                               }}
                             >
@@ -544,7 +546,7 @@ export function SessionSidePanel(props: {
                           <Tabs.List
                             ref={(el: HTMLDivElement) => {
                               tabList = el
-                              const stop = createFileTabListSync({ el, contextOpen })
+                              const stop = createFileTabListSync({ el, contextOpen, motionDisabled })
                               onCleanup(stop)
                             }}
                           >

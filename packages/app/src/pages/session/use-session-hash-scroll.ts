@@ -1,5 +1,6 @@
 import type { UserMessage } from "@opencode-ai/sdk/v2"
 import { useLocation, useNavigate } from "@solidjs/router"
+import { useMotionDisabled } from "@opencode-ai/ui/context/motion"
 import { createEffect, createMemo, onCleanup, onMount } from "solid-js"
 import { messageIdFromHash } from "./message-id-from-hash"
 
@@ -22,6 +23,7 @@ export const useSessionHashScroll = (input: {
   scheduleScrollState: (el: HTMLDivElement) => void
   consumePendingMessage: (key: string) => string | undefined
 }) => {
+  const motionDisabled = useMotionDisabled()
   const visibleUserMessages = createMemo(() => input.visibleUserMessages())
   const messageById = createMemo(() => new Map(visibleUserMessages().map((m) => [m.id, m])))
   let pendingKey = ""
@@ -85,7 +87,10 @@ export const useSessionHashScroll = (input: {
     return false
   }
 
-  const scrollToMessage = (message: UserMessage, behavior: ScrollBehavior = "smooth") => {
+  const scrollToMessage = (
+    message: UserMessage,
+    behavior: ScrollBehavior = motionDisabled() ? "auto" : "smooth",
+  ) => {
     cancel()
     if (input.currentMessageId() !== message.id) input.setActiveMessage(message)
     input.revealMessage?.(message.id)

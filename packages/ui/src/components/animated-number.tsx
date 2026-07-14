@@ -1,5 +1,6 @@
 import { For, Index, createEffect, createMemo, on } from "solid-js"
 import { createStore } from "solid-js/store"
+import { useMotionDisabled } from "../context/motion"
 
 const TRACK = Array.from({ length: 30 }, (_, index) => index % 10)
 const DURATION = 600
@@ -15,6 +16,7 @@ function spin(from: number, to: number, direction: 1 | -1) {
 }
 
 function Digit(props: { value: number; direction: 1 | -1 }) {
+  const motionDisabled = useMotionDisabled()
   const [state, setState] = createStore({
     step: props.value + 10,
     animating: false,
@@ -29,7 +31,7 @@ function Digit(props: { value: number; direction: 1 | -1 }) {
       (next) => {
         const delta = spin(last, next, props.direction)
         last = next
-        if (!delta) {
+        if (!delta || motionDisabled()) {
           setState("animating", false)
           setState("step", next + 10)
           return
@@ -41,6 +43,15 @@ function Digit(props: { value: number; direction: 1 | -1 }) {
       { defer: true },
     ),
   )
+
+  createEffect(() => {
+    if (!motionDisabled()) return
+    last = props.value
+    setState({
+      animating: false,
+      step: props.value + 10,
+    })
+  })
 
   return (
     <span data-slot="animated-number-digit">

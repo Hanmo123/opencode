@@ -572,6 +572,12 @@ export const dict = {
   "settings.general.section.display": "디스플레이",
   "settings.general.row.language.title": "언어",
   "settings.general.row.language.description": "OpenCode 표시 언어 변경",
+  "settings.general.row.efficientMode.title": "효율 모드",
+  "settings.general.row.efficientMode.description":
+    "리소스 사용량을 줄이기 위해 애니메이션과 부드러운 스크롤을 비활성화합니다.",
+  "settings.general.row.efficientMode.off": "끄기",
+  "settings.general.row.efficientMode.always": "항상",
+  "settings.general.row.efficientMode.unfocused": "창이 포커스되지 않았을 때",
   "settings.general.row.appearance.title": "모양",
   "settings.general.row.appearance.description": "기기에서 OpenCode가 보이는 방식 사용자 지정",
   "settings.general.row.colorScheme.title": "색상 테마",

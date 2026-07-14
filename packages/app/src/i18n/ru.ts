@@ -765,6 +765,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Язык",
   "settings.general.row.language.description": "Изменить язык отображения OpenCode",
+  "settings.general.row.efficientMode.title": "Режим экономии ресурсов",
+  "settings.general.row.efficientMode.description":
+    "Отключает анимацию и плавную прокрутку, чтобы снизить потребление ресурсов.",
+  "settings.general.row.efficientMode.off": "Выкл.",
+  "settings.general.row.efficientMode.always": "Всегда",
+  "settings.general.row.efficientMode.unfocused": "Когда окно не в фокусе",
   "settings.general.row.shell.title": "Оболочка терминала",
   "settings.general.row.shell.description":
     "Выберите оболочку для терминала. Совместимые оболочки также используются агентом при вызове инструментов.",

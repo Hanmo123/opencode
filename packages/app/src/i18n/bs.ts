@@ -765,6 +765,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Jezik",
   "settings.general.row.language.description": "Promijeni jezik prikaza u OpenCode-u",
+  "settings.general.row.efficientMode.title": "Efikasni način rada",
+  "settings.general.row.efficientMode.description":
+    "Onemogućava animacije i glatko pomjeranje radi smanjenja potrošnje resursa.",
+  "settings.general.row.efficientMode.off": "Isključeno",
+  "settings.general.row.efficientMode.always": "Uvijek",
+  "settings.general.row.efficientMode.unfocused": "Kada prozor nije u fokusu",
   "settings.general.row.shell.title": "Shell terminala",
   "settings.general.row.shell.description":
     "Odaberi shell koji se koristi za terminal. Kompatibilni shellovi koriste se i za pozive alata agenta.",

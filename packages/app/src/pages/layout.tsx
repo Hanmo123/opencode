@@ -50,6 +50,7 @@ import { setSessionHandoff } from "@/pages/session/handoff"
 import { SessionRouteKey, SessionStateKey } from "@/utils/server-scope"
 
 import { useDialog } from "@opencode-ai/ui/context/dialog"
+import { useMotionDisabled } from "@opencode-ai/ui/context/motion"
 import { useTheme, type ColorScheme } from "@opencode-ai/ui/theme/context"
 import { useCommand, type CommandOption } from "@/context/command"
 import { ConstrainDragXAxis, getDraggableId } from "@/utils/solid-dnd"
@@ -85,6 +86,7 @@ import { SidebarContent } from "./layout/sidebar-shell"
 
 export default function LegacyLayout(props: ParentProps) {
   const serverSDK = useServerSDK()
+  const motionDisabled = useMotionDisabled()
   const [store, setStore, , ready] = persisted(
     Persist.serverGlobal(serverSDK().scope, "layout.page", ["layout.page.v1"]),
     createStore({
@@ -509,7 +511,7 @@ export default function LegacyLayout(props: ParentProps) {
       return
     }
     setState("scrollSessionKey", sessionKey)
-    element.scrollIntoView({ block: "nearest", behavior: "smooth" })
+    element.scrollIntoView({ block: "nearest", behavior: motionDisabled() ? "auto" : "smooth" })
   }
 
   const currentProject = createMemo(() => {

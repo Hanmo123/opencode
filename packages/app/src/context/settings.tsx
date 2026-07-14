@@ -18,6 +18,8 @@ export interface SoundSettings {
   errors: string
 }
 
+export type EfficientMode = "off" | "always" | "unfocused"
+
 export interface Settings {
   general: {
     autoSave: boolean
@@ -32,6 +34,7 @@ export interface Settings {
     shellToolPartsExpanded: boolean
     editToolPartsExpanded: boolean
     showCustomAgents: boolean
+    efficientMode: EfficientMode
     mobileTitlebarPosition: "top" | "bottom"
     newLayoutDesigns?: boolean
     layoutTransitionEligible?: boolean
@@ -140,6 +143,7 @@ const defaultSettings: Settings = {
     shellToolPartsExpanded: false,
     editToolPartsExpanded: false,
     showCustomAgents: false,
+    efficientMode: "off",
     mobileTitlebarPosition: "top",
   },
   appearance: {
@@ -306,6 +310,10 @@ export const { use: useSettings, provider: SettingsProvider } = createSimpleCont
         showCustomAgents,
         setShowCustomAgents(value: boolean) {
           setStore("general", "showCustomAgents", value)
+        },
+        efficientMode: withFallback(() => store.general?.efficientMode, defaultSettings.general.efficientMode),
+        setEfficientMode(value: EfficientMode) {
+          setStore("general", "efficientMode", value)
         },
         mobileTitlebarPosition: withFallback(
           () => store.general?.mobileTitlebarPosition,

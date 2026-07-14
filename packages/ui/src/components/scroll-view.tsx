@@ -2,6 +2,7 @@ import { onCleanup, onMount, splitProps, type ComponentProps, Show, mergeProps }
 import { createResizeObserver } from "@solid-primitives/resize-observer"
 import { createStore } from "solid-js/store"
 import { useI18n } from "../context/i18n"
+import { useMotionDisabled } from "../context/motion"
 
 export type ScrollViewThumbVisibility = "hover" | "scroll"
 
@@ -75,6 +76,7 @@ export function scrollTopFromThumbPointer(input: {
 
 export function ScrollView(props: ScrollViewProps) {
   const i18n = useI18n()
+  const motionDisabled = useMotionDisabled()
   const merged = mergeProps({ orientation: "vertical", thumbVisibility: "hover" }, props)
   const [local, events, rest] = splitProps(
     merged,
@@ -223,27 +225,27 @@ export function ScrollView(props: ScrollViewProps) {
     switch (next) {
       case "page-down":
         e.preventDefault()
-        viewportRef.scrollBy({ top: scrollAmount, behavior: "smooth" })
+        viewportRef.scrollBy({ top: scrollAmount, behavior: motionDisabled() ? "auto" : "smooth" })
         break
       case "page-up":
         e.preventDefault()
-        viewportRef.scrollBy({ top: -scrollAmount, behavior: "smooth" })
+        viewportRef.scrollBy({ top: -scrollAmount, behavior: motionDisabled() ? "auto" : "smooth" })
         break
       case "home":
         e.preventDefault()
-        viewportRef.scrollTo({ top: 0, behavior: "smooth" })
+        viewportRef.scrollTo({ top: 0, behavior: motionDisabled() ? "auto" : "smooth" })
         break
       case "end":
         e.preventDefault()
-        viewportRef.scrollTo({ top: viewportRef.scrollHeight, behavior: "smooth" })
+        viewportRef.scrollTo({ top: viewportRef.scrollHeight, behavior: motionDisabled() ? "auto" : "smooth" })
         break
       case "up":
         e.preventDefault()
-        viewportRef.scrollBy({ top: -lineAmount, behavior: "smooth" })
+        viewportRef.scrollBy({ top: -lineAmount, behavior: motionDisabled() ? "auto" : "smooth" })
         break
       case "down":
         e.preventDefault()
-        viewportRef.scrollBy({ top: lineAmount, behavior: "smooth" })
+        viewportRef.scrollBy({ top: lineAmount, behavior: motionDisabled() ? "auto" : "smooth" })
         break
     }
   }

@@ -17,6 +17,24 @@
   font-style: normal;
 }
 
+html[data-efficient-mode] {
+  scroll-behavior: auto !important;
+}
+
+html[data-efficient-mode] *,
+html[data-efficient-mode] *::before,
+html[data-efficient-mode] *::after {
+  animation: none !important;
+  scroll-behavior: auto !important;
+  transition: none !important;
+}
+
+html[data-efficient-mode]::view-transition-group(*),
+html[data-efficient-mode]::view-transition-old(*),
+html[data-efficient-mode]::view-transition-new(*) {
+  animation: none !important;
+}
+
 @media (display-mode: standalone) {
   /* WebKit excludes safe-area insets from dvh in installed apps. */
   #root {

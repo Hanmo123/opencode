@@ -31,6 +31,7 @@ import {
 import { Dynamic } from "solid-js/web"
 import { CommandProvider, useCommand, type CommandOption } from "@/context/command"
 import { CommentsProvider } from "@/context/comments"
+import { EfficientModeProvider } from "@/context/efficient-mode"
 import { FileProvider } from "@/context/file"
 import { ServerSDKProvider } from "@/context/server-sdk"
 import { ServerSyncProvider, useServerSync } from "@/context/server-sync"
@@ -553,26 +554,28 @@ export function AppInterface(props: {
     >
       <GlobalProvider>
         <SettingsProvider>
-          <ConnectionGate disableHealthCheck={props.disableHealthCheck} startup={props.startup}>
-            <Show when={useSettings().general.newLayoutDesigns().toString()} keyed>
-              <Dynamic
-                component={props.router ?? Router}
-                root={(routerProps) => (
-                  <TabsProvider>
-                    <NotificationProvider>
-                      <ServerShell>
-                        <Show when={useSettings().general.newLayoutDesigns()} fallback={routerProps.children}>
-                          <NewAppLayout serverScoped={props.serverScoped}>{routerProps.children}</NewAppLayout>
-                        </Show>
-                      </ServerShell>
-                    </NotificationProvider>
-                  </TabsProvider>
-                )}
-              >
-                <Routes serverScoped={props.serverScoped} />
-              </Dynamic>
-            </Show>
-          </ConnectionGate>
+          <EfficientModeProvider>
+            <ConnectionGate disableHealthCheck={props.disableHealthCheck} startup={props.startup}>
+              <Show when={useSettings().general.newLayoutDesigns().toString()} keyed>
+                <Dynamic
+                  component={props.router ?? Router}
+                  root={(routerProps) => (
+                    <TabsProvider>
+                      <NotificationProvider>
+                        <ServerShell>
+                          <Show when={useSettings().general.newLayoutDesigns()} fallback={routerProps.children}>
+                            <NewAppLayout serverScoped={props.serverScoped}>{routerProps.children}</NewAppLayout>
+                          </Show>
+                        </ServerShell>
+                      </NotificationProvider>
+                    </TabsProvider>
+                  )}
+                >
+                  <Routes serverScoped={props.serverScoped} />
+                </Dynamic>
+              </Show>
+            </ConnectionGate>
+          </EfficientModeProvider>
         </SettingsProvider>
       </GlobalProvider>
     </ServerProvider>

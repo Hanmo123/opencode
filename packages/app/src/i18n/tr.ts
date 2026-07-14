@@ -770,6 +770,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Dil",
   "settings.general.row.language.description": "OpenCode'un görünüm dilini değiştirin",
+  "settings.general.row.efficientMode.title": "Verimli mod",
+  "settings.general.row.efficientMode.description":
+    "Kaynak kullanımını azaltmak için animasyonları ve yumuşak kaydırmayı devre dışı bırakır.",
+  "settings.general.row.efficientMode.off": "Kapalı",
+  "settings.general.row.efficientMode.always": "Her zaman",
+  "settings.general.row.efficientMode.unfocused": "Pencere odakta değilken",
   "settings.general.row.shell.title": "Terminal Kabuğu",
   "settings.general.row.shell.description":
     "Terminalinizde kullanılacak kabuğu seçin. Uyumlu kabuklar, ajan araç çağrılarında da kullanılır.",

@@ -758,6 +758,12 @@ export const dict = {
 
   "settings.general.row.language.title": "ภาษา",
   "settings.general.row.language.description": "เปลี่ยนภาษาที่แสดงสำหรับ OpenCode",
+  "settings.general.row.efficientMode.title": "โหมดประหยัดทรัพยากร",
+  "settings.general.row.efficientMode.description":
+    "ปิดใช้งานภาพเคลื่อนไหวและการเลื่อนแบบลื่นไหลเพื่อลดการใช้ทรัพยากร",
+  "settings.general.row.efficientMode.off": "ปิด",
+  "settings.general.row.efficientMode.always": "เสมอ",
+  "settings.general.row.efficientMode.unfocused": "เมื่อหน้าต่างไม่ได้รับโฟกัส",
   "settings.general.row.shell.title": "เชลล์เทอร์มินัล",
   "settings.general.row.shell.description":
     "เลือกเชลล์ที่จะใช้กับเทอร์มินัล เชลล์ที่เข้ากันได้จะใช้สำหรับการเรียกเครื่องมือของเอเจนต์ด้วย",

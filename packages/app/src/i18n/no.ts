@@ -646,6 +646,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Språk",
   "settings.general.row.language.description": "Endre visningsspråket for OpenCode",
+  "settings.general.row.efficientMode.title": "Effektiv modus",
+  "settings.general.row.efficientMode.description":
+    "Deaktiverer animasjoner og jevn rulling for å redusere ressursbruken.",
+  "settings.general.row.efficientMode.off": "Av",
+  "settings.general.row.efficientMode.always": "Alltid",
+  "settings.general.row.efficientMode.unfocused": "Når vinduet ikke er i fokus",
   "settings.general.row.appearance.title": "Utseende",
   "settings.general.row.appearance.description": "Tilpass hvordan OpenCode ser ut på enheten din",
   "settings.general.row.colorScheme.title": "Fargevalg",

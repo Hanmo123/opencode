@@ -700,6 +700,12 @@ export const dict = {
   "settings.general.section.display": "Ekran",
   "settings.general.row.language.title": "Język",
   "settings.general.row.language.description": "Zmień język wyświetlania dla OpenCode",
+  "settings.general.row.efficientMode.title": "Tryb oszczędny",
+  "settings.general.row.efficientMode.description":
+    "Wyłącza animacje i płynne przewijanie, aby zmniejszyć zużycie zasobów.",
+  "settings.general.row.efficientMode.off": "Wyłączony",
+  "settings.general.row.efficientMode.always": "Zawsze",
+  "settings.general.row.efficientMode.unfocused": "Gdy okno nie jest aktywne",
   "settings.general.row.shell.title": "Powłoka terminala",
   "settings.general.row.shell.description":
     "Wybierz powłokę używaną w terminalu. Zgodne powłoki są również używane przez wywołania narzędzi agenta.",

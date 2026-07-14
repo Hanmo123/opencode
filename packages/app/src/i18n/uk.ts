@@ -858,6 +858,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Мова",
   "settings.general.row.language.description": "Змінити мову інтерфейсу OpenCode",
+  "settings.general.row.efficientMode.title": "Режим економії ресурсів",
+  "settings.general.row.efficientMode.description":
+    "Вимикає анімації та плавне прокручування, щоб зменшити використання ресурсів.",
+  "settings.general.row.efficientMode.off": "Вимкнено",
+  "settings.general.row.efficientMode.always": "Завжди",
+  "settings.general.row.efficientMode.unfocused": "Коли вікно не у фокусі",
   "settings.general.row.shell.title": "Командна оболонка термінала",
   "settings.general.row.shell.description":
     "Виберіть оболонку для термінала. Сумісні оболонки також використовуються для викликів інструментів агента.",

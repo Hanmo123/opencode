@@ -1,5 +1,6 @@
 import { useFilteredList } from "@opencode-ai/ui/hooks"
 import { useSpring } from "@opencode-ai/ui/motion-spring"
+import { useMotionDisabled } from "@opencode-ai/ui/context/motion"
 import {
   createEffect,
   on,
@@ -206,6 +207,7 @@ const EXAMPLES = [
 
 export const PromptInput: Component<PromptInputProps> = (props) => {
   const sdk = useSDK()
+  const motionDisabled = useMotionDisabled()
 
   const sync = useSync()
   const files = useFile()
@@ -623,6 +625,7 @@ export const PromptInput: Component<PromptInputProps> = (props) => {
     props.controls.session.id
     if (props.controls.session.id) return
     if (!suggest()) return
+    if (motionDisabled()) return
     const interval = setInterval(() => {
       setStore("placeholder", (prev) => (prev + 1) % EXAMPLES.length)
     }, 6500)
@@ -914,7 +917,7 @@ export const PromptInput: Component<PromptInputProps> = (props) => {
 
     requestAnimationFrame(() => {
       const element = slashPopoverRef.querySelector(`[data-slash-id="${activeId}"]`)
-      element?.scrollIntoView({ block: "nearest", behavior: "smooth" })
+      element?.scrollIntoView({ block: "nearest", behavior: motionDisabled() ? "auto" : "smooth" })
     })
   }
   const selectPopoverActive = () => {

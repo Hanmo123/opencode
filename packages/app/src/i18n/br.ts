@@ -700,6 +700,12 @@ export const dict = {
   "settings.general.section.display": "Tela",
   "settings.general.row.language.title": "Idioma",
   "settings.general.row.language.description": "Alterar o idioma de exibição do OpenCode",
+  "settings.general.row.efficientMode.title": "Modo eficiente",
+  "settings.general.row.efficientMode.description":
+    "Desativa animações e rolagem suave para reduzir o uso de recursos.",
+  "settings.general.row.efficientMode.off": "Desativado",
+  "settings.general.row.efficientMode.always": "Sempre",
+  "settings.general.row.efficientMode.unfocused": "Quando a janela não estiver em foco",
   "settings.general.row.shell.title": "Shell do terminal",
   "settings.general.row.shell.description":
     "Escolha o shell usado no terminal. Os shells compatíveis também são usados nas chamadas de ferramentas do agente.",

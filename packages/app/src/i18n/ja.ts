@@ -696,6 +696,12 @@ export const dict = {
   "settings.general.section.display": "ディスプレイ",
   "settings.general.row.language.title": "言語",
   "settings.general.row.language.description": "OpenCodeの表示言語を変更します",
+  "settings.general.row.efficientMode.title": "効率モード",
+  "settings.general.row.efficientMode.description":
+    "リソース使用量を抑えるため、アニメーションとスムーズスクロールを無効にします。",
+  "settings.general.row.efficientMode.off": "オフ",
+  "settings.general.row.efficientMode.always": "常に",
+  "settings.general.row.efficientMode.unfocused": "ウィンドウが非アクティブのとき",
   "settings.general.row.shell.title": "ターミナルシェル",
   "settings.general.row.shell.description":
     "ターミナルで使用するシェルを選択します。互換性のあるシェルはエージェントのツール呼び出しにも使用されます。",

@@ -22,6 +22,7 @@ import {
   terminalDefault,
   terminalFontFamily,
   terminalInput,
+  type EfficientMode,
   useSettings,
 } from "@/context/settings"
 import { playSoundById, SOUND_OPTIONS } from "@/utils/sound"
@@ -193,6 +194,11 @@ export const SettingsGeneralV2: Component<{
       label: language.label(locale),
     })),
   )
+  const efficientModeOptions = createMemo(() => [
+    { value: "off" as EfficientMode, label: language.t("settings.general.row.efficientMode.off") },
+    { value: "always" as EfficientMode, label: language.t("settings.general.row.efficientMode.always") },
+    { value: "unfocused" as EfficientMode, label: language.t("settings.general.row.efficientMode.unfocused") },
+  ])
 
   const noneSound = { id: "none", label: "sound.option.none" } as const
   const soundOptions = [noneSound, ...SOUND_OPTIONS]
@@ -269,6 +275,23 @@ export const SettingsGeneralV2: Component<{
             value={(o) => o.value}
             label={(o) => o.label}
             onSelect={(option) => option && language.setLocale(option.value)}
+          />
+        </SettingsRowV2>
+
+        <SettingsRowV2
+          title={language.t("settings.general.row.efficientMode.title")}
+          description={language.t("settings.general.row.efficientMode.description")}
+        >
+          <SelectV2
+            appearance="inline"
+            data-action="settings-efficient-mode"
+            options={efficientModeOptions()}
+            placement="bottom-end"
+            gutter={6}
+            current={efficientModeOptions().find((option) => option.value === settings.general.efficientMode())}
+            value={(option) => option.value}
+            label={(option) => option.label}
+            onSelect={(option) => option && settings.general.setEfficientMode(option.value)}
           />
         </SettingsRowV2>
 

@@ -751,6 +751,11 @@ export const dict = {
 
   "settings.general.row.language.title": "語言",
   "settings.general.row.language.description": "變更 OpenCode 的顯示語言",
+  "settings.general.row.efficientMode.title": "高效模式",
+  "settings.general.row.efficientMode.description": "停用動畫和平滑捲動，以降低資源使用量。",
+  "settings.general.row.efficientMode.off": "關閉",
+  "settings.general.row.efficientMode.always": "一律",
+  "settings.general.row.efficientMode.unfocused": "視窗未聚焦時",
   "settings.general.row.shell.title": "終端機 Shell",
   "settings.general.row.shell.description": "選擇終端機使用的 Shell。相容的 Shell 也會用於代理程式工具呼叫。",
   "settings.general.row.shell.autoDefault": "自動（預設）",

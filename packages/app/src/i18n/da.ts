@@ -760,6 +760,12 @@ export const dict = {
 
   "settings.general.row.language.title": "Sprog",
   "settings.general.row.language.description": "Ændr visningssproget for OpenCode",
+  "settings.general.row.efficientMode.title": "Effektiv tilstand",
+  "settings.general.row.efficientMode.description":
+    "Deaktiverer animationer og jævn rulning for at reducere ressourceforbruget.",
+  "settings.general.row.efficientMode.off": "Fra",
+  "settings.general.row.efficientMode.always": "Altid",
+  "settings.general.row.efficientMode.unfocused": "Når vinduet ikke er i fokus",
   "settings.general.row.shell.title": "Terminalshell",
   "settings.general.row.shell.description":
     "Vælg den shell, der bruges i din terminal. Kompatible shells bruges også til agentens værktøjskald.",

@@ -691,6 +691,11 @@ export const dict = {
   "settings.general.section.display": "شاشة العرض",
   "settings.general.row.language.title": "اللغة",
   "settings.general.row.language.description": "تغيير لغة العرض لـ OpenCode",
+  "settings.general.row.efficientMode.title": "وضع الكفاءة",
+  "settings.general.row.efficientMode.description": "يعطّل الرسوم المتحركة والتمرير السلس لتقليل استخدام الموارد.",
+  "settings.general.row.efficientMode.off": "إيقاف",
+  "settings.general.row.efficientMode.always": "دائمًا",
+  "settings.general.row.efficientMode.unfocused": "عندما لا تكون النافذة موضع التركيز",
   "settings.general.row.shell.title": "Shell المحطة الطرفية",
   "settings.general.row.shell.description":
     "اختر shell المستخدم في المحطة الطرفية. تُستخدم واجهات shell المتوافقة أيضًا في استدعاءات أدوات الوكيل.",
